@@ -9,8 +9,8 @@ const api = axios.create({
 
 export async function register({username,email,passowrd}){
 
-    try{
-   const response = await axios.post('api/auth/register'{
+try{
+   const response = await axios.post('api/auth/register',{
         username,email,passowrd
     })
 
@@ -51,7 +51,7 @@ export async function logout () {
 export async function getMe () {
 
     try{
-        const response = await axios.get("/api/auth/get-me")
+        const response = await api.get("/api/auth/get-me")
         return response.data
     }catch(err){
         console.log(err)
